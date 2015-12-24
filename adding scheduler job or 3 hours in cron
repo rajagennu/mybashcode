@@ -1,0 +1,17 @@
+1. Edit your cron with crontab -e
+and add this line into your crontab to run it as schedule job for every 3 hours
+
+    00 */3 * * * * ~/killtelegram.sh >/dev/null 2>&1
+2. touch ~/killtelegram.sh 
+   chmod +x ~/killtelegram.sh
+   
+open killtelegram.sh with your favorate editor and write as below
+   
+   #!/usr/bin/bash
+   telegram &
+   sleep 15m
+   pkill telegram
+
+Save and exit
+
+thats it. It will open automatically for every 3 Hours and it will stay for 15 min and It will get killed.    
