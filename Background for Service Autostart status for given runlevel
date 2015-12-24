@@ -1,0 +1,27 @@
+To get current level explicitly we can use 
+  runlevel | cut -c3
+
+
+next I want to setup runlevels equal to fields of chkconfig --list command 
+
+[root@localhost BASH]# chkconfig --list
+NetworkManager  0:off   1:off   2:on    3:on    4:on    5:on    6:off
+acpid           0:off   1:off   2:on    3:on    4:on    5:on    6:off
+atd             0:off   1:off   2:off   3:on    4:on    5:on    6:off
+auditd          0:off   1:off   2:on    3:on    4:on    5:on    6:off
+blk-availability        0:off   1:on    2:on    3:on    4:on    5:on    6:off
+bluetooth       0:off   1:off   2:off   3:on    4:on    5:on    6:off
+cpuspeed        0:off   1:on    2:on    3:on    4:on    5:on    6:off
+crond           0:off   1:off   2:on    3:on    4:on    5:on    6:off
+dnsmasq         0:off   1:off   2:off   3:off   4:off   5:off   6:off
+fcoe            0:off   1:off   2:on    3:on    4:on    5:on    6:off
+
+F1              F2-RL0  F3-RL1 F4-RL2 F5-RL3   F6-RL4   F7-RL5   F8-RL6
+
+Next I need to ask user to enter his choice runlevel 
+
+http://www.thegeekstuff.com/2010/06/bash-if-statement-examples/
+http://www.thegeekstuff.com/2010/07/bash-case-statement/
+
+Then I am going to use awk and I will extract particuler service status in given runlevel by user
+
